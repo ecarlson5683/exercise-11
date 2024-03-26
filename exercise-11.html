@@ -167,9 +167,9 @@ $ Primary.Lifestyle  &lt;chr&gt; "Insessorial", "Insessorial", "Generalist", "In
 </div>
 </div>
 <ul>
-<li>Species, Family, Order, Habitat are categorical and character</li>
-<li>Migration is also categorical but numeric</li>
-<li>All others are numeric</li>
+<li><em>Species, Family, Order, Habitat are categorical and character</em></li>
+<li><em>Migration is also categorical but numeric</em></li>
+<li><em>All others are numeric</em></li>
 </ul>
 </section>
 <section id="challenge-1" class="level2 unnumbered">
@@ -282,10 +282,10 @@ F-statistic: 144.5 on 2 and 10983 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># migratory = 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>Yes, log(<strong>Mass</strong>) is associated with both <strong>Trophic.Level</strong> and <strong>Migration</strong>, as both models have large F-statistics (78.42 and 144.5) and very low associated p-values (&lt; 2.2e-16 for both)</li>
+<li><em>Yes, log(Mass) is associated with both Trophic.Level and Migration, as both models have large F-statistics (78.42 and 144.5) and very low associated p-values (&lt; 2.2e-16 for both)</em></li>
 <li>Given the regression coefficients returned for your <strong>Migration</strong> model, which <strong>Migration</strong> categor(ies) are different than the reference level? What level is the reference level?
 <ul>
-<li>Partially migratory and migratory are different than sedentary, level 1.</li>
+<li><em>Partially migratory and migratory are different than sedentary, level 1.</em></li>
 </ul></li>
 <li>Relevel and assess differences among the remaining pair of <strong>Migration</strong> categories.</li>
 </ul>
@@ -317,7 +317,7 @@ F-statistic: 144.5 on 2 and 10983 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <ul>
-<li>Partially migratory and Migratory are also different</li>
+<li><em>Partially migratory and Migratory are also different</em></li>
 <li>The coefficient for the intercept, beta_0, reflects the estimate of the mean log(Mass) for the first of our level variables</li>
 <li>The estimate of beta_1 is the estimated difference in mean log(Mass) associated with being that level relative to the first (reference) level</li>
 </ul>
@@ -442,18 +442,18 @@ Scavenger-Omnivore   4.61766318  3.72914808  5.5061783 0.0000000</code></pre>
 Explanatory: Trophic.Level (factor)
 Null Hypothesis: independence
 # A tibble: 1,000 × 2
-   replicate   stat
-       &lt;int&gt;  &lt;dbl&gt;
- 1         1 0.190 
- 2         2 1.19  
- 3         3 0.873 
- 4         4 1.37  
- 5         5 0.708 
- 6         6 0.876 
- 7         7 0.540 
- 8         8 0.517 
- 9         9 0.0957
-10        10 0.0387
+   replicate  stat
+       &lt;int&gt; &lt;dbl&gt;
+ 1         1 0.880
+ 2         2 1.26 
+ 3         3 2.45 
+ 4         4 1.04 
+ 5         5 0.616
+ 6         6 0.573
+ 7         7 0.107
+ 8         8 0.688
+ 9         9 0.496
+10        10 0.827
 # ℹ 990 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(permuted.F<span class="sc">$</span>stat) <span class="co"># zero bounded, with decay (looks like an F distribution!)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

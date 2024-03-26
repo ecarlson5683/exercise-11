@@ -23,6 +23,7 @@ editor_options:
 * Winnow the dataset to include only the following variables: **Species1**, **Family1**, **Order1**, **Beak.Length_Culmen**, **Beak.Width**, **Beak.Depth**, **Tarsus.Length**, **Wing.Length**, **Tail.Length**, **Mass**, **Habitat**, **Migration**, **Trophic.Level**, **Trophic.Niche**, **Min.Latitude**, **Max.Latitude**, **Centroid.Latitude**, **Primary.Lifestyle**, and **Range.Size**
 
 ```{r}
+#| warning: false
 library(tidyverse)
 library(broom)
 
@@ -38,9 +39,9 @@ d <- d %>% select(Species1, Family1, Order1, Beak.Width, Beak.Depth, Tarsus.Leng
 glimpse(d)
 ```
 
-  + Species, Family, Order, Habitat are categorical and character
-  + Migration is also categorical but numeric
-  + All others are numeric
+  + *Species, Family, Order, Habitat are categorical and character*
+  + *Migration is also categorical but numeric*
+  + *All others are numeric*
 
 
 ## Challenge 1 {.unnumbered}
@@ -99,9 +100,9 @@ summary(m2)
 # migratory = 3
 ```
 
-  + Yes, log(**Mass**) is associated with both **Trophic.Level** and **Migration**, as both models have large F-statistics (78.42 and 144.5) and very low associated p-values (< 2.2e-16 for both)
+  + *Yes, log(Mass) is associated with both Trophic.Level and Migration, as both models have large F-statistics (78.42 and 144.5) and very low associated p-values (< 2.2e-16 for both)*
 * Given the regression coefficients returned for your **Migration** model, which **Migration** categor(ies) are different than the reference level? What level is the reference level?
-  + Partially migratory and migratory are different than sedentary, level 1.
+  + *Partially migratory and migratory are different than sedentary, level 1.*
 * Relevel and assess differences among the remaining pair of **Migration** categories.
  
 ```{r}
@@ -109,7 +110,7 @@ m2 <- lm(log(Mass) ~ Migration, data = d %>% mutate(Migration = relevel(Migratio
 summary(m2)
 ```
 
-  + Partially migratory and Migratory are also different
+  + *Partially migratory and Migratory are also different*
 * The coefficient for the intercept, beta_0, reflects the estimate of the mean log(Mass) for the first of our level variables
 * The estimate of beta_1 is the estimated difference in mean log(Mass) associated with being that level relative to the first (reference) level
 
@@ -172,6 +173,7 @@ Statistics is always comparing an observed test statistic to a distribution (whe
 
 * The number of times you generate a test statistic under null that the actual value of test statistic exceeds that permuted value
 * 1000 permutations is usually good, maybe 10000
+
 
 ## Challenge 2 {.unnumbered}
 ### Data Wrangling, One- and Two-Factor ANOVA {.unnumbered}
@@ -367,6 +369,7 @@ Use this approach to see whether variances in across groups in your various mode
 
 Looking for a nice scatter of points around a horizontal line (should be no relationship)
 ```{r}
+#| eval: false
 library(car)
 install.packages("jtools")
 library(jtools)
