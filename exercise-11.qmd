@@ -260,7 +260,7 @@ summary(m1)
 d_pass <- d %>% filter(Order1 == "Passeriformes")
 ```
 
-* Run separate one-factor ANOVA analyses to look at the association between [1] relative beak length and **Primary.Lifestyle** and between [2] relative beak length and **Trophic.Level**. In doing so...
+* Run separate one-factor ANOVA analyses to look at the association between [1] relative beak length and **Primary.Lifestyle** and between [2] relative beak length and **Trophic.Level**. 
   + Make boxplots of response variable by each predictor and by the combination of predictors.
   + Run linear models for each predictor separately and interpret the model output.
   + *Primary lifestyle and trophic level significantly effect relative beak length when modeled separately, based on large F values and very small p-value associated with each global model*
